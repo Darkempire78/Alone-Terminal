@@ -58,9 +58,7 @@ event = {
                         "next_message": "\\\"EXPLO_MS#373\\\" C'est bien un des modèles que vous avez contribué a développer. Mais il semble disposer de composants d'on vous n'êtes pas au fait. Son état déplorable ne vous permet pas d'en dire beaucoup plus. Il semble avoir été déchiqueté par une grande mâchoire métallique. Le mystère s'épaissit.",
                         "health": 0,
                         "oxygen": 0,
-                        "loot": [
-                            "armure"
-                        ],
+                        "loot": [],
                         "add": [],
                         "remove": [],
                         "script": [
