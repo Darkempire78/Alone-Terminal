@@ -9,9 +9,9 @@ from random import choice
 from termcolor import colored
 from pyfiglet import Figlet
 
-from Event import event
-from AddEvent import addEvent
-from Loot import loot
+from data.Event import event
+from data.AddEvent import addEvent
+from data.Loot import loot
 from ExcelExtractor import excelExtractor
 
 class Alone:

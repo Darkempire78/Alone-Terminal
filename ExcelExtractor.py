@@ -9,8 +9,8 @@ import codecs
 def excelExtractor():
     # Read excel file
     eventTable = xlrd.open_workbook('event_table.xlsx', encoding_override="utf8")
-# EVENT
 
+# EVENT
     # Get sheet
     sheet = eventTable.sheet_by_index(0)
 
@@ -60,21 +60,6 @@ def excelExtractor():
             script2 = sheet.cell(line, 21)
             zone2 = sheet.cell(line, 22)
             require2 = sheet.cell(line, 23)
-
-        elif len(sheet.row_values(line)) > 24:
-            actionNumber = 3
-
-            # Action 3
-            description3 = sheet.cell(line, 24)
-            next_message3 = sheet.cell(line, 25)
-            health3 = sheet.cell(line, 26)
-            oxygen3 = sheet.cell(line, 27)
-            loot3 = sheet.cell(line, 28)
-            add3 = sheet.cell(line, 29)
-            remove3 = sheet.cell(line, 30)
-            script3 = sheet.cell(line, 31)
-            zone3 = sheet.cell(line, 32)
-            require3 = sheet.cell(line, 33)
         else:
             actionNumber = 1
 
@@ -159,13 +144,12 @@ def excelExtractor():
                 event[zone.value][type.value][name.value]["actions"]["action2"]["require"] = require2.value.split(", ")
 
     # write python file with data
-    with codecs.open("Event.py",'w', "utf-8") as file:
+    with codecs.open("data\Event.py",'w', "utf-8") as file:
         data = json.dumps(event, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("event = "+ data)
 
 # LOOT
-
     # Get sheet
     lootSheet = eventTable.sheet_by_index(2)
 
@@ -205,14 +189,13 @@ def excelExtractor():
         loot[codeName.value]["maxOxygen"] = int(maxOxygen.value)
 
     # write python file with data
-    with codecs.open("Loot.py",'w', "utf-8") as file:
+    with codecs.open("data\Loot.py",'w', "utf-8") as file:
         data = json.dumps(loot, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("loot = "+ data)
 
 
 # ADD EVENT
-
     # Get sheet
     addEventSheet = eventTable.sheet_by_index(1)
 
@@ -240,9 +223,8 @@ def excelExtractor():
         secondDescription = addEventSheet.cell(line, 14)
 
         if len(addEventSheet.row_values(line)) > 14 and secondDescription.value != "":
-            actionNumber = 2
-
             # Action 2
+            actionNumber = 2
             description2 = addEventSheet.cell(line, 14)
             next_message2 = addEventSheet.cell(line, 15)
             health2 = addEventSheet.cell(line, 16)
@@ -253,21 +235,6 @@ def excelExtractor():
             script2 = addEventSheet.cell(line, 21)
             zone2 = addEventSheet.cell(line, 22)
             require2 = addEventSheet.cell(line, 23)
-
-        elif len(addEventSheet.row_values(line)) > 24:
-            actionNumber = 3
-
-            # Action 3
-            description3 = addEventSheet.cell(line, 24)
-            next_message3 = addEventSheet.cell(line, 25)
-            health3 = addEventSheet.cell(line, 26)
-            oxygen3 = addEventSheet.cell(line, 27)
-            loot3 = addEventSheet.cell(line, 28)
-            add3 = addEventSheet.cell(line, 29)
-            remove3 = addEventSheet.cell(line, 30)
-            script3 = addEventSheet.cell(line, 31)
-            zone3 = addEventSheet.cell(line, 32)
-            require3 = addEventSheet.cell(line, 33)
         else:
             actionNumber = 1
 
@@ -352,9 +319,7 @@ def excelExtractor():
                 addEvent[name.value]["actions"]["action2"]["require"] = require2.value.split(", ")
 
     # write python file with data
-    with codecs.open("AddEvent.py",'w', "utf-8") as file:
+    with codecs.open("data\AddEvent.py",'w', "utf-8") as file:
         data = json.dumps(addEvent, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("addEvent = "+ data)
-
-
