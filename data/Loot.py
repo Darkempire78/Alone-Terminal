@@ -2,9 +2,9 @@ loot = {
     "bonbonne5": {
         "name": "grande bonbonne d'oxygène",
         "health": 0,
-        "oxygen": 5,
+        "oxygen": 0,
         "maxHealth": 0,
-        "maxOxygen": 0
+        "maxOxygen": 5
     },
     "clef_orange": {
         "name": "clef orange",
@@ -46,6 +46,13 @@ loot = {
         "health": 0,
         "oxygen": 0,
         "maxHealth": 2,
+        "maxOxygen": 0
+    },
+    "plan_jardin": {
+        "name": "plan des jardins",
+        "health": 0,
+        "oxygen": 0,
+        "maxHealth": 0,
         "maxOxygen": 0
     }
 }

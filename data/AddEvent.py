@@ -103,7 +103,7 @@ addEvent = {
         "actions": {
             "action1": {
                 "description": "Vous introduisez la carte magnétique noire dans le lecteur.",
-                "next_message": "La porte s'ouvre sans un seul bruit. Celle-ci protégeait en fait un bureau en acier trempé sur lequel repose un ordinateur qui sort de sa veille dès votre entrée dans la pièce. Celui-ci ne vous laisse accéder qu'à une unique note.  Rapport-XX/XX/XX\\  :  Le sujet s'est échappé du secteur 4. Comment est-ce possible avec le renforcement de la sécurité ? Envoyez une équipe sur place et ordonnez au personnel sans combi d'évitez la zone de h-s (à gauche à l'entrée du centre), il faudra certainement encore drainer l'oxygène pour en venir à bout. Tandis que vous méditez cette lecture vous apercevez derriere le bureau une station de soin personnel, un matériel qui coûte une fortune, en effet dès utilisation l'effet est immédiat, vous vous sentez rajeuni de 10 ans.",
+                "next_message": "La porte s'ouvre sans un seul bruit. Celle-ci protégeait en fait un bureau en acier trempé sur lequel repose un ordinateur qui sort de sa veille dès votre entrée dans la pièce. Celui-ci ne vous laisse accéder qu'à une unique note.  Rapport-XX/XX/XX\\  :  Le sujet s'est échappé du secteur 4. Comment est-ce possible avec le renforcement de la sécurité ? Envoyez une équipe sur place et ordonnez au personnel sans combi d'évitez la zone de h-s (rouge), il faudra certainement encore drainer l'oxygène pour en venir à bout. Tandis que vous méditez cette lecture vous apercevez derrière le bureau une station de soin personnel, un matériel qui coûte une fortune, en effet dès utilisation l'effet est immédiat, vous vous sentez rajeuni de 10 ans.",
                 "health": 99,
                 "oxygen": -1,
                 "loot": [],
@@ -317,7 +317,9 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [],
-                "script": [],
+                "script": [
+                    "lab1"
+                ],
                 "zone": "lab",
                 "require": [
                     "plaque_iridescente"
@@ -338,7 +340,88 @@ addEvent = {
         }
     },
     "random_vert_1": {
-        "text": "",
+        "text": "WIP",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_2"
+                    ]
+                ],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_1"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_vert_2": {
+        "text": "WIP",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_3"
+                    ]
+                ],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_2"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_vert_3": {
+        "text": "WIP GG!!!",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_3"
+                    ]
+                ],
+                "script": [],
+                "zone": "jardins",
+                "require": []
+            }
+        }
+    },
+    "random_rouge_1": {
+        "text": "WIP",
         "actions": {
             "action1": {
                 "description": "",
@@ -349,7 +432,64 @@ addEvent = {
                 "add": [],
                 "remove": [],
                 "script": [],
-                "zone": "",
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_rouge_2": {
+        "text": "WIP",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_rouge_3": {
+        "text": "WIP",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_garde": {
+        "text": "WIP",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
                 "require": []
             }
         }

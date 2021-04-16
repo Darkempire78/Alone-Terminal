@@ -769,7 +769,7 @@ event = {
     "lab": {
         "script": {
             "lab1": {
-                "text": "Vos yeux mettent quelques secondes à s'habituer à la semi-pénombre, agréable après l'éblouissement du désert. Votre enthousiasme précédent est bien retombé, il vous faut maintenant explorer ce lieu inconnu et les dangers du désert vous bien mis en garde ; vous êtes en zone hostile. Au fond de la pièce deux portes, l'une ouvre sur une ligne verte serpentant le long du mur et s'enfoncant dans les profondeurs du complexe. L'autre est identique à la différence que la ligne est rouge.",
+                "text": "Vos yeux mettent quelques secondes à s'habituer à la semi-pénombre, agréable après l'éblouissement du désert. Votre enthousiasme précédent est bien retombé, il vous faut maintenant explorer ce lieu inconnu et les dangers du désert vous bien mis en garde ; vous êtes en zone hostile. Au fond de la pièce deux portes, l'une ouvre sur une ligne verte serpentant le long du mur et s'enfonçant dans les profondeurs du complexe. L'autre est identique à la différence que la ligne est rouge.",
                 "actions": {
                     "action1": {
                         "description": "Vous décidez de suivre la ligne verte.",
@@ -786,12 +786,12 @@ event = {
                         ],
                         "remove": [],
                         "script": [],
-                        "zone": "desert",
+                        "zone": None,
                         "require": []
                     },
                     "action2": {
                         "description": "Vous décidez de suivre la ligne rouge.",
-                        "next_message": "Le couloir dans lequel vous entrez vous paraît tout à fait banal, à l'exception de cette large ligne rouge peinte sur le mur. Le couloir s'enfonce tout droit dans les profondeurs du complexe et la ligne s'agrandit progressivement jusqu'à recouvrir l'intégralité du couloir d'un rouge vif. Soudain sans prévenir, la lumière s'éteint et vous entendez un chuinttement que vous reconnaissez entre mille ; de l'oxygène c'était trop beau pour durer. Déboussolé par ces événements innatendus il va pourtant falloir continuer ... Vous décidez de marcher au hasard.",
+                        "next_message": "Le couloir dans lequel vous entrez vous paraît tout à fait banal, à l'exception de cette large ligne rouge peinte sur le mur. Le couloir s'enfonce tout droit dans les profondeurs du complexe et la ligne s'agrandit progressivement jusqu'à recouvrir l'intégralité du couloir d'un rouge vif. Soudain sans prévenir, la lumière s'éteint et vous entendez un chuintement que vous reconnaissez entre mille ; de l'oxygène c'était trop beau pour durer. Déboussolé par ces événements inattendus il va pourtant falloir continuer ... Vous décidez de marcher au hasard.",
                         "health": 0,
                         "oxygen": -1,
                         "loot": [],
@@ -808,15 +808,126 @@ event = {
                         "require": []
                     }
                 }
+            },
+            "lab2": {
+                "text": "Il n'y a aucune source de lumière et aucun moyen d'en emporter une, vous commencez à douter de votre idée.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous vous élancez en dehors du sas, tant pis vous ferez à tâtons.",
+                        "next_message": "Vous prenez une grande emjambée et sortez du sas .. et heurtez violemment une paroi. Sonné vous tentez de vous remettre sur vos pieds et découvrez qu'il n y a pas de sol. A l'extérieur du sas, il n'y avait en fait qu'un énorme trou. Malheureusement, vu la longueur de votre chute, vous ne saurez jamais ce qu'il y a au fond ...",
+                        "health": -99,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous jugez plus prudent d'abandonner votre idée.",
+                        "next_message": "Vous avez sans doute pris la bonne décision.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
             }
         },
         "random": {
-            "random1": {
-                "text": "",
+            "random1_gar": {
+                "text": "Une alarme retentit soudain et tous les néons passent au rouge. Puis, au bout de quelques secondes, l'alarme s'arrête. A part l'éclairage rien ne semble avoir changé. Vous espérez que votre intrusion n'ait aucun lien avec l'événement.",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
+                        "description": "Vous retenez votre souffle.",
+                        "next_message": "Rien ne se passe, mais vous êtes plus que jamais sur vos gardes.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [
+                            [
+                                "lab",
+                                "random",
+                                "random_garde"
+                            ]
+                        ],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random1_gar"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random2_ox": {
+                "text": "Au grès d'un couloir, une aspérité du mur accroche votre bonbonne d'oxygène qui commence à fuir. Vous vous apercevez heureusement rapidement. De toute façon ce n'est pas l'oxygène qui manque ici.",
+                "actions": {
+                    "action1": {
+                        "description": "Faire un réparage de fortune.",
+                        "next_message": "La fuit est rapidement colmatée et vous vous efforcez de ne plus y penser.",
+                        "health": 0,
+                        "oxygen": -3,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random2_ox"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "La laisser fuir, de toute façon vous n'en avez plus besoin.",
+                        "next_message": "Vous continuez le cœur léger en laissant la bouteille se vider.",
+                        "health": 0,
+                        "oxygen": -99,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random2_ox"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random3_ded": {
+                "text": "Ce complexe est un véritable dédale ! Vous n'êtes pas sûr d'être dans la bonne direction. Et cette maudite ligne qui a disparue …",
+                "actions": {
+                    "action1": {
+                        "description": "Vous vous dirigez à droite.",
+                        "next_message": "Encore un couloir identique aux autres ...",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous vous dirigez à gauche.",
+                        "next_message": "Encore un couloir identique aux autres ...",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
@@ -828,12 +939,47 @@ event = {
                     }
                 }
             },
-            "random2": {
-                "text": "",
+            "random4_ded+": {
+                "text": "WIP",
                 "actions": {
                     "action1": {
                         "description": "",
                         "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random4_ded+"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random5_salle1": {
+                "text": "Soudain, vous percevez de la lumière sous une porte du couloir.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous tentez de l'ouvrir.",
+                        "next_message": "Rien à faire, elle est solide et verrouillée.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous n'y prêtez pas attention.",
+                        "next_message": "Qui sait ce que vous auriez pu trouver derrière ?",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
@@ -845,102 +991,209 @@ event = {
                     }
                 }
             },
-            "random3": {
-                "text": "",
+            "random6_salle2": {
+                "text": "Soudain, vous percevez de la lumière sous une porte du couloir.",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
+                        "description": "Vous tentez de l'ouvrir.",
+                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. WIP",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
-                        "remove": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random6_salle2"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous n'y prêtez pas attention.",
+                        "next_message": "Qui sait ce que vous auriez pu trouver derrière ?",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random6_salle2"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []
                     }
                 }
             },
-            "random4": {
-                "text": "",
+            "random7_salle3": {
+                "text": "Soudain, vous percevez de la lumière sous une porte du couloir.",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
+                        "description": "Vous tentez de l'ouvrir.",
+                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. WIP",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
-                        "remove": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random7_salle3"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous n'y prêtez pas attention.",
+                        "next_message": "Qui sait ce que vous auriez pu trouver derrière ?",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random7_salle3"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []
                     }
                 }
             },
-            "random5": {
-                "text": "",
+            "random8_grat": {
+                "text": "Un genre de grattement se fait entendre, réverbéré le long du couloir devant vous. Difficile de déterminer son origine. ",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
+                        "description": "Vous accélérez le pas vers ce qui est peut-être l'origine du grattement.",
+                        "next_message": "Il s'arrête au bout de quelques secondes, et ne reprend plus. Dépité vous poursuivez votre exploration.",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
-                        "remove": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random8_grat"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous vous faites tout petit, et rebroussez chemin.",
+                        "next_message": "Plus de signe du bruit. Vous l'avez sans doute échappé belle.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random8_grat"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []
                     }
                 }
             },
-            "random6": {
-                "text": "",
+            "random9_gro": {
+                "text": "Un grognement fait trembler les murs. Et au bruit qu'il fait, la cause se rapproche de vous !",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
-                        "health": 0,
+                        "description": "Vous détalez.",
+                        "next_message": "Après quelques minutes de course, vous n'entendez plus rien. Vous avez sans doute semé la chose responsable du grognement. Vous reprenez diffcilement haleine.",
+                        "health": -1,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
-                        "remove": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random9_gro"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous foncez droit vers le bruit, déterminé à en confronter le responsable.",
+                        "next_message": "Plus vous avancez plus le grognement devient ronronnement. Vous arrivez dans une large salle blanche éclairée par des puissants spots. Plissants les yeux vous comprenez que le grognement n'était en fait que le ronronnement rassurant d'une photocopieuse, horriblement déformé par l'écho des longs couloirs. Au pieds de l'imprimante, une marre de feuilles, toutes semble-t-il étant des impressions du même document. Celui-ci est un plan de ce qui semble être un dédale, avec un chemin grossièrement dessiné en rouge. Celui-ci est sobrement appelé \"Plan des jardins\". Malheureusement cela ne vous est d'aucune aide dans l'immédiat. Il ne semble rien n'y avoir d'autre à faire dans cette salle et vous reprenez votre chemin.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [
+                            "plan_jardin"
+                        ],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random9_gro"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []
                     }
                 }
             },
-            "random7": {
-                "text": "",
+            "random10_sas": {
+                "text": "A l'angle d'un couloir anodin, vous vous retrouvez face à un sas étanche. Un petit écran vert ç sa gauche ne comporte qu'un seul mot : \"ouvrir ?\". Allez-vous répondre à cet appel ?",
                 "actions": {
                     "action1": {
-                        "description": "",
-                        "next_message": "",
+                        "description": "Vous vérifiez votre oxygène, mettez votre combinaison, et ouvrez le sas sans perdre de temps.",
+                        "next_message": "Devant vous le noir total, vous êtes sans doute dans une grotte.",
                         "health": 0,
-                        "oxygen": 0,
+                        "oxygen": -2,
                         "loot": [],
                         "add": [],
-                        "remove": [],
-                        "script": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random10_sas"
+                            ]
+                        ],
+                        "script": [
+                            "lab2"
+                        ],
                         "zone": None,
                         "require": []
-                    }
-                }
-            },
-            "random8": {
-                "text": "",
-                "actions": {
-                    "action1": {
-                        "description": "",
-                        "next_message": "",
+                    },
+                    "action2": {
+                        "description": "Vos réponses sont dans ce complexe, pas dehors !",
+                        "next_message": "Vous avez sans doute pris la bonne décision.",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
-                        "remove": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random10_sas"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []

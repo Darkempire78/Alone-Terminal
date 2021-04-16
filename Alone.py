@@ -5,7 +5,6 @@ import sys
 import subprocess
 import random
 
-from random import choice
 from termcolor import colored
 from pyfiglet import Figlet
 
@@ -17,8 +16,8 @@ from ExcelExtractor import excelExtractor
 class Alone:
     def __init__(self):
         self.actionNumber = 0
-        self.zone = "lab"
-        self.nextEvent = "lab1"
+        self.zone = "intro"
+        self.nextEvent = "intro1"
         # Player
         self.live = True
         self.backpack = {}
