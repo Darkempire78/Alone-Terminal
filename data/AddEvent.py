@@ -39,6 +39,7 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [
+                    "porte_rouge1",
                     "porte_rouge2",
                     "porte_rouge3"
                 ],
@@ -73,6 +74,8 @@ addEvent = {
                 ],
                 "add": [],
                 "remove": [
+                    "porte_rouge1",
+                    "porte_rouge2",
                     "porte_rouge3"
                 ],
                 "script": [],
@@ -330,6 +333,23 @@ addEvent = {
                 "remove": [],
                 "script": [],
                 "zone": "lab",
+                "require": []
+            }
+        }
+    },
+    "random_vert_1": {
+        "text": "",
+        "actions": {
+            "action1": {
+                "description": "",
+                "next_message": "",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": "",
                 "require": []
             }
         }

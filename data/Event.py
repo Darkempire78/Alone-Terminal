@@ -68,7 +68,7 @@ event = {
                         "require": []
                     },
                     "action2": {
-                        "description": "Vous investiguez la table, vous pensez avoir repéré un objet intéressant, bien que la plupart soit recouverte d'un fluide ressemblant à de l'huile de moteur.",
+                        "description": "Vous investiguez la table, vous pensez avoir repéré un objet intéressant, bien que la plupart soit recouverts d'un fluide ressemblant à de l'huile de moteur.",
                         "next_message": "Vous parvenez à en extraire une petite clef orange fluo, cependant il s'avère que le fluide était acide, vous serrez contre vous votre main meurtrie.",
                         "health": -1,
                         "oxygen": 0,
@@ -769,13 +769,73 @@ event = {
     "lab": {
         "script": {
             "lab1": {
+                "text": "Vos yeux mettent quelques secondes à s'habituer à la semi-pénombre, agréable après l'éblouissement du désert. Votre enthousiasme précédent est bien retombé, il vous faut maintenant explorer ce lieu inconnu et les dangers du désert vous bien mis en garde ; vous êtes en zone hostile. Au fond de la pièce deux portes, l'une ouvre sur une ligne verte serpentant le long du mur et s'enfoncant dans les profondeurs du complexe. L'autre est identique à la différence que la ligne est rouge.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous décidez de suivre la ligne verte.",
+                        "next_message": "Le couloir dans lequel vous entrez vous paraît tout à fait banal, à l'exception de cette large ligne verte peinte sur le mur. Le couloir à de nombreux embranchements mais leur pénombre vous dissuade de les emprunter, de plus vous préférez continuer à suivre la ligne. Cependant au bout de quelques minutes celle-ci s'arrête abruptement, en fait le couloir a intégralement été repeint en noir, du sol au plafond, sans distinction pour les portes ou les néons. La pénombre est donc encore plus étouffante. Pourtant il vous faut continuer ... Vous décidez de marcher au hasard.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [
+                            [
+                                "lab",
+                                "random",
+                                "random_vert_1"
+                            ]
+                        ],
+                        "remove": [],
+                        "script": [
+                            "random6"
+                        ],
+                        "zone": "desert",
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous décidez de suivre la ligne rouge.",
+                        "next_message": "Le couloir dans lequel vous entrez vous paraît tout à fait banal, à l'exception de cette large ligne rouge peinte sur le mur. Le couloir s'enfonce tout droit dans les profondeurs du complexe et la ligne s'agrandit progressivement jusqu'à recouvrir l'intégralité du couloir d'un rouge vif. Soudain sans prévenir, la lumière s'éteint et vous entendez un chuinttement que vous reconnaissez entre mille ; de l'oxygène c'était trop beau pour durer. Déboussolé par ces événements innatendus il va pourtant falloir continuer ... Vous décidez de marcher au hasard.",
+                        "health": 0,
+                        "oxygen": -1,
+                        "loot": [],
+                        "add": [
+                            [
+                                "lab",
+                                "random",
+                                "random_rouge_1"
+                            ]
+                        ],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random2": {
                 "text": "",
                 "actions": {
                     "action1": {
                         "description": "",
                         "next_message": "",
                         "health": 0,
-                        "oxygen": -1,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random5": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
                         "loot": [],
                         "add": [],
                         "remove": [],
@@ -794,7 +854,92 @@ event = {
                         "description": "",
                         "next_message": "",
                         "health": 0,
-                        "oxygen": -1,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random3": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random4": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random6": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random7": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random8": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
                         "loot": [],
                         "add": [],
                         "remove": [],

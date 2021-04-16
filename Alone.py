@@ -17,8 +17,8 @@ from ExcelExtractor import excelExtractor
 class Alone:
     def __init__(self):
         self.actionNumber = 0
-        self.zone = "intro"
-        self.nextEvent = "intro1"
+        self.zone = "lab"
+        self.nextEvent = "lab1"
         # Player
         self.live = True
         self.backpack = {}
@@ -117,9 +117,9 @@ class Alone:
                         else:
                             x = False
                     else:
-                        print("Choix inexistant")
+                        print("Choix impossible")
                 except:
-                    print("Choix inexistant")
+                    print("Choix impossible")
 
             # Print next_message
             print("\n" + event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["next_message"])
