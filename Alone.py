@@ -64,7 +64,7 @@ class Alone:
 
         # Event
             # eventType and eventNumber
-            if self.nextEvent == None:
+            if self.nextEvent is None:
                 eventType = "random"
                 eventNumber = random.choice(list(event[f"{self.zone}"][f"{eventType}"].keys()))
             else:
@@ -97,7 +97,7 @@ class Alone:
 
             # Choose the action
             x = True
-            while x == True:
+            while x is True:
                 choice = input("\nQue faire ? ")
                 try:
                     choice = int(choice)
@@ -218,7 +218,7 @@ class Alone:
                     event[f"{x[0]}"][f"{x[1]}"][f"{x[2]}"] = addEvent[f"{x[2]}"]
 
             # Zone
-            if event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["zone"] != None:
+            if event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["zone"] is not None:
                 tempZone = event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["zone"]
             else:
                 tempZone = self.zone

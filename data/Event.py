@@ -785,9 +785,7 @@ event = {
                             ]
                         ],
                         "remove": [],
-                        "script": [
-                            "random6"
-                        ],
+                        "script": [],
                         "zone": "desert",
                         "require": []
                     },
@@ -810,44 +808,27 @@ event = {
                         "require": []
                     }
                 }
-            },
-            "random2": {
-                "text": "",
-                "actions": {
-                    "action1": {
-                        "description": "",
-                        "next_message": "",
-                        "health": 0,
-                        "oxygen": 0,
-                        "loot": [],
-                        "add": [],
-                        "remove": [],
-                        "script": [],
-                        "zone": None,
-                        "require": []
-                    }
-                }
-            },
-            "random5": {
-                "text": "",
-                "actions": {
-                    "action1": {
-                        "description": "",
-                        "next_message": "",
-                        "health": 0,
-                        "oxygen": 0,
-                        "loot": [],
-                        "add": [],
-                        "remove": [],
-                        "script": [],
-                        "zone": None,
-                        "require": []
-                    }
-                }
             }
         },
         "random": {
             "random1": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random2": {
                 "text": "",
                 "actions": {
                     "action1": {
@@ -882,6 +863,23 @@ event = {
                 }
             },
             "random4": {
+                "text": "",
+                "actions": {
+                    "action1": {
+                        "description": "",
+                        "next_message": "",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random5": {
                 "text": "",
                 "actions": {
                     "action1": {
