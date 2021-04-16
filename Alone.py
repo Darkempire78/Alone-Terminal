@@ -86,7 +86,7 @@ class Alone:
                             nbOfGoodItem += 1
                     if nbOfGoodItem == nbOfItemRequire:
                         objectRequire = ""
-                        for y in event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action"]["require"]:
+                        for y in event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][x]["require"]:
                             objectRequire = objectRequire + ", " + self.backpack[y]["name"]
                         objectRequire = objectRequire[2:]
                         print(str(numberOfActions) + ") " + colored(f"[Nécessite l'utilisatin de : {objectRequire}] ", "red")+ event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][x]["description"])
