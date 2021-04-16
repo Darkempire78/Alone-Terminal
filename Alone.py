@@ -42,7 +42,7 @@ class Alone:
 
         while self.live == True:
             os.system('cls' if os.name == 'nt' else 'clear') # Clear the terminal
-            
+
             # Update data
             self.actionNumber += 1
 
@@ -56,28 +56,25 @@ class Alone:
 
             if self.zone == "intro":
                 print("Vie : " + colored(f'{self.health}', 'green') + f"/{self.maxHealth}")
-                print("Sac à dos : " + colored(printBackpack, "yellow"))
             else:
                 print("Vie : " + colored(f'{self.health}', 'green') + f"/{self.maxHealth}, Oxygène : " + colored(f"{self.oxygen}", "cyan") + f"/{self.maxOxygen}")
-                print("Sac à dos : " + colored(printBackpack, "yellow"))
-
+            
+            print("Sac à dos : " + colored(printBackpack, "yellow"))
             print("\033[1m" + "\nJournal de bord - Action n°" + str(self.actionNumber) + "\n" + "\033[0m")
 
         # Event
-            # eventType
+            # eventType and eventNumber
             if self.nextEvent == None:
                 eventType = "random"
-            else:
-                eventType = "script"
-            # eventNumber
-            if self.nextEvent == None:
                 eventNumber = random.choice(list(event[f"{self.zone}"][f"{eventType}"].keys()))
             else:
-                eventNumber = self.nextEvent
+                eventType = "script"
+                eventNumber = self.nextEvent    
+
             # Print event text
             print(event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["text"]+"\n")
 
-            # Print event actions
+            # Print the event actions
             numberOfActions = 0
             for x in event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"]:
                 numberOfActions += 1
@@ -109,11 +106,11 @@ class Alone:
                             nbOfGoodItem = 0
                             nbOfItemRequire = len(event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["require"])
                             for requireElement in event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["require"]:
-                                if requireElement in list(backpack):
+                                if requireElement in list(self.backpack):
                                     nbOfGoodItem += 1
                             if nbOfGoodItem == nbOfItemRequire:
                                 for listOfRequireElement in event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["require"]:
-                                    del backpack[listOfRequireElement]
+                                    del self.backpack[listOfRequireElement]
                                     x = False
                             else:
                                 print("Vous ne possèdez pas tous les objets nécessaires pour effectuer cette action.")
@@ -150,11 +147,11 @@ class Alone:
                                     self.health = self.maxHealth
                                 del self.backpack[itemIndex]
                                 break
-                        if self.health <= 0:
-                            print(colored("\n\nVOUS ETES MORT !\n", "red"))
-                            print("Appuyez sur entrée pour quitter")
-                            input()
-                            sys.exit()
+                    if self.health <= 0:
+                        print(colored("\n\nVOUS ETES MORT !\n", "red"))
+                        print("Appuyez sur entrée pour quitter")
+                        input()
+                        sys.exit()
 
             # Oxygen
             if event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["oxygen"] != 0:
@@ -178,11 +175,11 @@ class Alone:
                                     self.oxygen = self.maxOxygen
                                 del self.backpack[itemIndex]
                                 break
-                        if self.oxygen <= 0:
-                            print(colored("\n\nVOUS ETES MORT !\n", "red"))
-                            print("Appuyez sur entrée pour quitter")
-                            input()
-                            sys.exit()
+                    if self.oxygen <= 0:
+                        print(colored("\n\nVOUS ETES MORT !\n", "red"))
+                        print("Appuyez sur entrée pour quitter")
+                        input()
+                        sys.exit()
 
             # Script
             if len(event[f"{self.zone}"][f"{eventType}"][f"{eventNumber}"]["actions"][f"action{choice}"]["script"]) > 0:
@@ -236,8 +233,7 @@ class Alone:
 
             # Change zone
             self.zone = tempZone
-
-        # Click to pass the event
+            # Click to pass the event
             input("\nAppuyez sur entrée pour continuer.")
 
 
