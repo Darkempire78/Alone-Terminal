@@ -28,8 +28,8 @@ loot = {
         "maxOxygen": 0
     },
     "kit_soin1": {
-        "name": "kit de soin mineur",
-        "health": 1,
+        "name": "kit de soin",
+        "health": 2,
         "oxygen": 0,
         "maxHealth": 0,
         "maxOxygen": 0
@@ -43,13 +43,27 @@ loot = {
     },
     "armure": {
         "name": "armure de protection",
-        "health": 0,
+        "health": 2,
         "oxygen": 0,
         "maxHealth": 2,
         "maxOxygen": 0
     },
     "plan_jardin": {
         "name": "plan des jardins",
+        "health": 0,
+        "oxygen": 0,
+        "maxHealth": 0,
+        "maxOxygen": 0
+    },
+    "bombonne_end": {
+        "name": "bombonne endommagée",
+        "health": 0,
+        "oxygen": 0,
+        "maxHealth": 0,
+        "maxOxygen": -3
+    },
+    "roue_crantee": {
+        "name": "roue crantée",
         "health": 0,
         "oxygen": 0,
         "maxHealth": 0,

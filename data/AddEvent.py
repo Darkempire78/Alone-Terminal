@@ -39,9 +39,21 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [
-                    "porte_rouge1",
-                    "porte_rouge2",
-                    "porte_rouge3"
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge1"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge2"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge3"
+                    ]
                 ],
                 "script": [],
                 "zone": None,
@@ -74,9 +86,21 @@ addEvent = {
                 ],
                 "add": [],
                 "remove": [
-                    "porte_rouge1",
-                    "porte_rouge2",
-                    "porte_rouge3"
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge1"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge2"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge3"
+                    ]
                 ],
                 "script": [],
                 "zone": None,
@@ -90,7 +114,11 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [
-                    "porte_rouge3"
+                    [
+                        "lab",
+                        "random",
+                        "porte_rouge3"
+                    ]
                 ],
                 "script": [],
                 "zone": None,
@@ -110,7 +138,7 @@ addEvent = {
                 "add": [],
                 "remove": [
                     "lab",
-                    "script",
+                    "random",
                     "porte_mystérieuse"
                 ],
                 "script": [],
@@ -127,6 +155,8 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [
+                    "lab",
+                    "random",
                     "porte_mystérieuse"
                 ],
                 "script": [],
@@ -261,11 +291,11 @@ addEvent = {
         }
     },
     "random13": {
-        "text": "Alors que vous marchez seul avec vos pensées, votre réservoir semble dysfonctionner. ",
+        "text": "Alors que vous marchez seul avec vos pensées, votre réservoir d'oxygène semble dysfonctionner. ",
         "actions": {
             "action1": {
                 "description": "Vous utilisez un des kits de réparation fourni avec la combinaison.",
-                "next_message": "La réparation fonctionne mais vous avez perdu un peu d'oxygène. Très étrange incident…",
+                "next_message": "La réparation fonctionne mais vous avez perdu de l'oxygène. Très étrange incident…",
                 "health": 0,
                 "oxygen": -4,
                 "loot": [],
@@ -290,11 +320,11 @@ addEvent = {
         }
     },
     "random14": {
-        "text": "Mauvaise nouvelle, votre réservoir semble à nouveau dysfonctionner. ",
+        "text": "Mauvaise nouvelle, vous avez un nouveau problème d'oxygène.",
         "actions": {
             "action1": {
                 "description": "Vous utilisez un autre des kits de réparation fourni avec la combinaison.",
-                "next_message": "La réparation fonctionne mais vous avez perdu un peu d'oxygène. Comment ce fait-il que pareil incident se reproduise ?!",
+                "next_message": "La réparation fonctionne mais vous avez perdu un peu d'oxygène. Comment se fait-il que pareil incident se reproduise ?!",
                 "health": 0,
                 "oxygen": -2,
                 "loot": [],
@@ -333,18 +363,20 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [],
-                "script": [],
+                "script": [
+                    "lab1"
+                ],
                 "zone": "lab",
                 "require": []
             }
         }
     },
     "random_vert_1": {
-        "text": "WIP",
+        "text": "La ligne verte réapparait brièvement au détour d'un couloir.",
         "actions": {
             "action1": {
-                "description": "",
-                "next_message": "",
+                "description": "Vous la suivez en espérant qu'elle vous guidera quelque part.",
+                "next_message": "Mais elle disparait peut de temps après dans un autre couloir peint en noir. Qu'à cela ne tienne vous avez retrouvé espoir !",
                 "health": 0,
                 "oxygen": 0,
                 "loot": [],
@@ -369,11 +401,35 @@ addEvent = {
         }
     },
     "random_vert_2": {
-        "text": "WIP",
+        "text": "A nouveau la ligne verte réapparait, dans un couloir où des dizaines de petits robots d'un blanc immaculé reposent, semblent-il inactivés.",
         "actions": {
             "action1": {
-                "description": "",
-                "next_message": "",
+                "description": "Vous tentez d'attirer l'attention des robots, peut-être pourront-ils vous aider.",
+                "next_message": "Alors que vous tapotez la tête d'un robot, vous ressentez une décharge éléectrique qui vous laisse dans l'inconscience. A votre réveil Nonee trace des robots. De plus, La ligne verte disparait à nouveau au bout d'un corridor. Les mauvaises nouvelles s'enchaînent ...",
+                "health": -2,
+                "oxygen": 0,
+                "loot": [],
+                "add": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_3"
+                    ]
+                ],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_vert_2"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
+                "require": []
+            },
+            "action2": {
+                "description": "Vous passez sur la pointe des pieds.",
+                "next_message": "La ligne verte disparait à nouveau au bout d'un corridor.",
                 "health": 0,
                 "oxygen": 0,
                 "loot": [],
@@ -398,7 +454,7 @@ addEvent = {
         }
     },
     "random_vert_3": {
-        "text": "WIP GG!!!",
+        "text": "GG tu passe aux jardins [WIP]",
         "actions": {
             "action1": {
                 "description": "",
@@ -407,13 +463,7 @@ addEvent = {
                 "oxygen": 0,
                 "loot": [],
                 "add": [],
-                "remove": [
-                    [
-                        "lab",
-                        "random",
-                        "random_vert_3"
-                    ]
-                ],
+                "remove": [],
                 "script": [],
                 "zone": "jardins",
                 "require": []
@@ -472,15 +522,26 @@ addEvent = {
         }
     },
     "random_garde": {
-        "text": "WIP",
+        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement un petit robot d'un blanc immaculé apparaît à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crie-t'il d'une voix stridente.",
         "actions": {
             "action1": {
-                "description": "",
-                "next_message": "",
+                "description": "Vous détalez sans tarder.",
+                "next_message": "Vous parvenez à le semer sans difficulté et sa petite voix-stridente disparait rapidement.",
                 "health": 0,
                 "oxygen": 0,
                 "loot": [],
-                "add": [],
+                "add": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_2"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_3"
+                    ]
+                ],
                 "remove": [
                     [
                         "lab",
@@ -488,6 +549,93 @@ addEvent = {
                         "random_garde"
                     ]
                 ],
+                "script": [],
+                "zone": None,
+                "require": []
+            },
+            "action2": {
+                "description": "Vous vous jetez sur le petit robot, histoire de le faire taire une bonne fois pour toutes.",
+                "next_message": "Bien mal vous en a pris, vous commencez à réaliser votre erreur au premier choc électrique, bientôt suivi de nombreux autres. Vous êtes bientôt incapable de bouger. Soudain le robot s'arrête et s'exclame fièrement \"INTRUS NEUTRALISE\", il s'éloigne alors avec le même bruit de chenille qu'il est venu. Au bout de longues minutes vous parvenez à vous lever, ou plutôt à vous trainez et vous reprenez votre route en espérant ne jamais recroiser ce robot.",
+                "health": -2,
+                "oxygen": 0,
+                "loot": [],
+                "add": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_2"
+                    ],
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_3"
+                    ]
+                ],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_garde_2": {
+        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs  apparaîssent à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crient-t'il à l'unisson d'une voix stridente.",
+        "actions": {
+            "action1": {
+                "description": "Vous détalez sans tarder, vous rappellant de votre dernière confrontation.",
+                "next_message": "Au moment où vous pensiez les avoir semé un autre vous prend à revers. Le retour des chocs électriques ne vous ravit pas… A nouveau alors que vous êtes au bord de l'inconscience les robots partent en vous laissant pour mort et il ne sont pas loin de la vérité.",
+                "health": -3,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            },
+            "action2": {
+                "description": "Vous tentez de les raisonner (ou d'implorer leur pitié).",
+                "next_message": "Les robots restent insensibles à vos prières et vous prenez votre dose de chocs électriques. A nouveau alors que vous êtes au bord de l'inconscience les robots partent en vous laissant pour mort et il ne sont pas loin de la vérité.",
+                "health": -3,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_garde_3": {
+        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs en piteux état, apparaîssent à l'angle d'un couloir. \"ALLER.. INTRUS..\". Crient-t'il d'une voix discordante.",
+        "actions": {
+            "action1": {
+                "description": "Vous détalez sans tarder, vous rappellant de votre dernière confrontation.",
+                "next_message": "Vous parvenez à les semer, vous vivez un autre jour !",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            },
+            "action2": {
+                "description": "Vous tentez de les raisonner (ou d'implorer leur pitié).",
+                "next_message": "Les robots restent insensibles à vos prières et tentent de vous électrocuter. Seulement leur taser n'a pas l'air de fonctionner et il ne parviennent qu'à vous piquer au sang en couinant. Vous les enjambez et en de longues foulées parvenez rapidement à les distancer, vous aurez au moins appris une information importante, tous les robots ne sont pas aussi bien équipés.",
+                "health": -1,
+                "oxygen": 0,
+                "loot": [],
+                "add": [],
+                "remove": [],
                 "script": [],
                 "zone": None,
                 "require": []

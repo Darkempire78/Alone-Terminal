@@ -97,7 +97,7 @@ def excelExtractor():
             else:
                 event[zone.value][type.value][name.value]["actions"]["action1"]["script"] = script1.value.split(", ")
             # Zone
-            if zone1.value == "None":
+            if zone1.value == "None" or zone1.value == "":
                 event[zone.value][type.value][name.value]["actions"]["action1"]["zone"] = None
             else:
                 event[zone.value][type.value][name.value]["actions"]["action1"]["zone"] = zone1.value
@@ -133,7 +133,7 @@ def excelExtractor():
             else:
                 event[zone.value][type.value][name.value]["actions"]["action2"]["script"] = script2.value.split(", ")
             # Zone
-            if zone2.value == "None":
+            if zone2.value == "None"  or zone2.value == "":
                 event[zone.value][type.value][name.value]["actions"]["action2"]["zone"] = None
             else:
                 event[zone.value][type.value][name.value]["actions"]["action2"]["zone"] = zone2.value
@@ -272,7 +272,7 @@ def excelExtractor():
             else:
                 addEvent[name.value]["actions"]["action1"]["script"] = script1.value.split(", ")
             # Zone
-            if zone1.value == "None":
+            if zone1.value == "None"  or zone1.value == "":
                 addEvent[name.value]["actions"]["action1"]["zone"] = None
             else:
                 addEvent[name.value]["actions"]["action1"]["zone"] = zone1.value
@@ -308,7 +308,7 @@ def excelExtractor():
             else:
                 addEvent[name.value]["actions"]["action2"]["script"] = script2.value.split(", ")
             # Zone
-            if zone2.value == "None":
+            if zone2.value == "None"  or zone2.value == "": 
                 addEvent[name.value]["actions"]["action2"]["zone"] = None
             else:
                 addEvent[name.value]["actions"]["action2"]["zone"] = zone2.value

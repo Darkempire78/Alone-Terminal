@@ -108,7 +108,7 @@ event = {
     "desert": {
         "script": {
             "desert1": {
-                "text": "Tandis que vous observez le monticule, vous entendez un curieux grincement métallique et vous avez l'impression d'apercevoir une forme miroitant au soleil au sommet de la dune. Puis, plus rien.",
+                "text": "Tandis que votre regard divague, vous entendez un curieux grincement métallique et vous avez l'impression d'apercevoir une forme miroitant au soleil au sommet d'une dune avoisinante. Puis, plus rien.",
                 "actions": {
                     "action1": {
                         "description": "Vous vous aventurez au sommet du monticule et tentez de vous introduire dans le trou.",
@@ -790,7 +790,7 @@ event = {
                         "require": []
                     },
                     "action2": {
-                        "description": "Vous décidez de suivre la ligne rouge.",
+                        "description": "Vous décidez de suivre la ligne rouge. [WIP]",
                         "next_message": "Le couloir dans lequel vous entrez vous paraît tout à fait banal, à l'exception de cette large ligne rouge peinte sur le mur. Le couloir s'enfonce tout droit dans les profondeurs du complexe et la ligne s'agrandit progressivement jusqu'à recouvrir l'intégralité du couloir d'un rouge vif. Soudain sans prévenir, la lumière s'éteint et vous entendez un chuintement que vous reconnaissez entre mille ; de l'oxygène c'était trop beau pour durer. Déboussolé par ces événements inattendus il va pourtant falloir continuer ... Vous décidez de marcher au hasard.",
                         "health": 0,
                         "oxygen": -1,
@@ -828,6 +828,85 @@ event = {
                         "description": "Vous jugez plus prudent d'abandonner votre idée.",
                         "next_message": "Vous avez sans doute pris la bonne décision.",
                         "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "lab3": {
+                "text": "Après plus ample investigation, cela semble être une plateforme d'analyse d'objets minéraux aux vu des différents pictogrammes. Il est cependant difficile d'en savoir plus.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous insérez les pierres blanches trouvées dans le desert dans le module principal.",
+                        "next_message": "Celui-ci commence à tournoyer et à produire un sifflement intense. Après quelques secondes tous les voyants passent au rouge et le sol commence à trembler. Vous commencez à paniquer quand soudain tout s'arrête, le module se calme et le sas s'ouvre libérant vos pierres. Celles-ci sont maintenant parfaitement taillés en forme de gemmes hexagonales. Vous comprenez maintenant le rôle des fentes de la même forme dans le pupitre de commande non-loin de là. Vous vous dépêchez de récupérer les gemmes et de les insérer. Aussitôt un écran  apparait sur le mur opposé, affichant un message énigmatique : \" Bienvenue U4563-P345. Niveaux d'oxygénation et de fertilisant des jardins restaurés.\". Vous avez beau vous creuser la tête vous ne savez pas si ce qui viens de se passer est vraiment une bonne chose. Secoué par tous ces événements vous finissez par quitter la pièce plongé dans vos pensées.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": [
+                            "pierres_blanches"
+                        ]
+                    },
+                    "action2": {
+                        "description": "Vous ne voyez pas en quoi de telles machines pourraient vous être utiles.",
+                        "next_message": "Vous auriez espéré qu'une telle salle vous viendrait en aide, quelle déception. Cependant avant de quitter la salle vous trouvez un petit morceau de métal en forme de roue crantée derrière un amas de câble. Sait-on jamais, vous le fourrez dans votre poche.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [
+                            "roue_crantee"
+                        ],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "lab4": {
+                "text": "Vous arrivez à un cul de sac.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous rebroussez chemin.",
+                        "next_message": "Encore du temps perdu …",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "lab5": {
+                "text": "Soudain vous entendez les crissements d'une chenille, immédiatement un petit robot d'un blanc immaculé apparaît à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crie-t'il d'une voix stridente.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous détalez sans tarder.",
+                        "next_message": "Vous parvenez à le semer sans difficulté et sa petite voix-stridente disparait rapidement.",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous vous jetez sur le petit robot, histoire de le faire taire une bonne fois pour toutes.",
+                        "next_message": "Bien mal vous en a pris, vous commencez à réaliser votre erreur au premier choc électrique, bientôt suivi de nombreux autres. Vous êtes bientôt incapable de bouger. Soudain le robot s'arrête et s'exclame fièrement \"INTRUS NEUTRALISE\", il s'éloigne alors avec le même bruit de chenille qu'il est venu. Au bout de longues minutes vous parvenez à vous lever, ou plutôt à vous trainez et vous reprenez votre route en espérant ne jamais recroiser ce robot.",
+                        "health": -2,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
@@ -894,8 +973,10 @@ event = {
                         "description": "La laisser fuir, de toute façon vous n'en avez plus besoin.",
                         "next_message": "Vous continuez le cœur léger en laissant la bouteille se vider.",
                         "health": 0,
-                        "oxygen": -99,
-                        "loot": [],
+                        "oxygen": -2,
+                        "loot": [
+                            "bombonne_end"
+                        ],
                         "add": [],
                         "remove": [
                             [
@@ -940,7 +1021,7 @@ event = {
                 }
             },
             "random4_ded+": {
-                "text": "WIP",
+                "text": "[WIP]",
                 "actions": {
                     "action1": {
                         "description": "",
@@ -973,7 +1054,10 @@ event = {
                         "loot": [],
                         "add": [],
                         "remove": [],
-                        "script": [],
+                        "script": [
+                            "lab4",
+                            "lab5"
+                        ],
                         "zone": None,
                         "require": []
                     },
@@ -985,7 +1069,10 @@ event = {
                         "loot": [],
                         "add": [],
                         "remove": [],
-                        "script": [],
+                        "script": [
+                            "lab4",
+                            "lab5"
+                        ],
                         "zone": None,
                         "require": []
                     }
@@ -996,8 +1083,8 @@ event = {
                 "actions": {
                     "action1": {
                         "description": "Vous tentez de l'ouvrir.",
-                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. WIP",
-                        "health": 0,
+                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. L'intérieur révèle une salle poussiéreuse, au carrelage seulement partièlement posé et aux murs encore nus. Ceci explique pourquoi elle était ouverte sa construction n'est pas terminé. Pourtant on dirait que cela fait longtemps que le chantier a été abandonné. Pas grand chose d'intéressant à trouver à part des rations de protéines, sans doute destinées aux ouvrier. Ou aux gardes ...",
+                        "health": 1,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
@@ -1037,7 +1124,7 @@ event = {
                 "actions": {
                     "action1": {
                         "description": "Vous tentez de l'ouvrir.",
-                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. WIP",
+                        "next_message": "A votre grande surprise, la porte s'ouvre sans broncher. L'intérieur révèle ce qui semble être une station d'analyse, dont la machinerie avancée et les diodes électroniques clignotantes ne vous évoquent rien de particulier, ce ne semble pas être lié à votre domaine d'expertise.",
                         "health": 0,
                         "oxygen": 0,
                         "loot": [],
@@ -1049,7 +1136,9 @@ event = {
                                 "random7_salle3"
                             ]
                         ],
-                        "script": [],
+                        "script": [
+                            "lab3"
+                        ],
                         "zone": None,
                         "require": []
                     },
@@ -1073,7 +1162,48 @@ event = {
                     }
                 }
             },
-            "random8_grat": {
+            "random8_salle4": {
+                "text": "Une porte entrebaillée attire votre attention à l'autre bout d'un couloir.",
+                "actions": {
+                    "action1": {
+                        "description": "Vous tentez de l'ouvrir.",
+                        "next_message": "[WIP]",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random8_salle4"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    },
+                    "action2": {
+                        "description": "Vous n'y prêtez pas attention.",
+                        "next_message": "Qui sait ce que vous auriez pu trouver derrière ?",
+                        "health": 0,
+                        "oxygen": 0,
+                        "loot": [],
+                        "add": [],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random8_salle4"
+                            ]
+                        ],
+                        "script": [],
+                        "zone": None,
+                        "require": []
+                    }
+                }
+            },
+            "random9_grat": {
                 "text": "Un genre de grattement se fait entendre, réverbéré le long du couloir devant vous. Difficile de déterminer son origine. ",
                 "actions": {
                     "action1": {
@@ -1087,7 +1217,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random8_grat"
+                                "random9_grat"
                             ]
                         ],
                         "script": [],
@@ -1105,7 +1235,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random8_grat"
+                                "random9_grat"
                             ]
                         ],
                         "script": [],
@@ -1114,7 +1244,7 @@ event = {
                     }
                 }
             },
-            "random9_gro": {
+            "random10_gro": {
                 "text": "Un grognement fait trembler les murs. Et au bruit qu'il fait, la cause se rapproche de vous !",
                 "actions": {
                     "action1": {
@@ -1128,7 +1258,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random9_gro"
+                                "random10_gro"
                             ]
                         ],
                         "script": [],
@@ -1148,7 +1278,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random9_gro"
+                                "random10_gro"
                             ]
                         ],
                         "script": [],
@@ -1157,8 +1287,8 @@ event = {
                     }
                 }
             },
-            "random10_sas": {
-                "text": "A l'angle d'un couloir anodin, vous vous retrouvez face à un sas étanche. Un petit écran vert ç sa gauche ne comporte qu'un seul mot : \"ouvrir ?\". Allez-vous répondre à cet appel ?",
+            "random11_sas": {
+                "text": "A l'angle d'un couloir anodin, vous vous retrouvez face à un sas étanche. Un petit écran vert à sa gauche ne comporte qu'un seul mot : \"ouvrir ?\". Allez-vous répondre à cet appel ?",
                 "actions": {
                     "action1": {
                         "description": "Vous vérifiez votre oxygène, mettez votre combinaison, et ouvrez le sas sans perdre de temps.",
@@ -1171,7 +1301,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random10_sas"
+                                "random11_sas"
                             ]
                         ],
                         "script": [
@@ -1191,7 +1321,7 @@ event = {
                             [
                                 "lab",
                                 "random",
-                                "random10_sas"
+                                "random11_sas"
                             ]
                         ],
                         "script": [],
