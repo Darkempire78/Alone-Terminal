@@ -88,9 +88,15 @@ def excelExtractor():
             else:
                 event[zone.value][type.value][name.value]["actions"]["action1"]["loot"] = loot1.value.split(", ")
             # Add
-            event[zone.value][type.value][name.value]["actions"]["action1"]["add"] = ast.literal_eval(add1.value)
+            if add1.value == "":
+                event[zone.value][type.value][name.value]["actions"]["action1"]["add"] = []
+            else:
+                event[zone.value][type.value][name.value]["actions"]["action1"]["add"] = ast.literal_eval(add1.value)
             # Remove
-            event[zone.value][type.value][name.value]["actions"]["action1"]["remove"] = ast.literal_eval(remove1.value)
+            if remove1.value == "":
+                event[zone.value][type.value][name.value]["actions"]["action1"]["remove"] = []
+            else:
+                event[zone.value][type.value][name.value]["actions"]["action1"]["remove"] = ast.literal_eval(remove1.value)
             # Script
             if script1.value == "":
                 event[zone.value][type.value][name.value]["actions"]["action1"]["script"] = []
@@ -124,9 +130,15 @@ def excelExtractor():
             else:
                 event[zone.value][type.value][name.value]["actions"]["action2"]["loot"] = loot2.value.split(", ")
             # Add
-            event[zone.value][type.value][name.value]["actions"]["action2"]["add"] = ast.literal_eval(add2.value)
+            if add2.value == "":
+                event[zone.value][type.value][name.value]["actions"]["action2"]["add"] = []
+            else:
+                event[zone.value][type.value][name.value]["actions"]["action2"]["add"] = ast.literal_eval(add2.value)
             # Remove
-            event[zone.value][type.value][name.value]["actions"]["action2"]["remove"] = ast.literal_eval(remove2.value)
+            if remove2.value == "":
+                event[zone.value][type.value][name.value]["actions"]["action2"]["remove"] = []
+            else:
+                event[zone.value][type.value][name.value]["actions"]["action2"]["remove"] = ast.literal_eval(remove2.value)
             # Script
             if script2.value == "":
                 event[zone.value][type.value][name.value]["actions"]["action2"]["script"] = []
