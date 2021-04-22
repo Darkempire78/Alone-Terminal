@@ -131,7 +131,7 @@ addEvent = {
         "actions": {
             "action1": {
                 "description": "Vous introduisez la carte magnétique noire dans le lecteur.",
-                "next_message": "La porte s'ouvre sans un seul bruit. Celle-ci protégeait en fait un bureau en acier trempé sur lequel repose un ordinateur qui sort de sa veille dès votre entrée dans la pièce. Celui-ci ne vous laisse accéder qu'à une unique note.  Rapport-XX/XX/XX\\  :  Le sujet s'est échappé du secteur 4. Comment est-ce possible avec le renforcement de la sécurité ? Envoyez une équipe sur place et ordonnez au personnel sans combi d'évitez la zone de h-s (rouge), il faudra certainement encore drainer l'oxygène pour en venir à bout. Tandis que vous méditez cette lecture vous apercevez derrière le bureau une station de soin personnel, un matériel qui coûte une fortune, en effet dès utilisation l'effet est immédiat, vous vous sentez rajeuni de 10 ans.",
+                "next_message": "La porte s'ouvre sans un seul bruit. Celle-ci protégeait en fait un bureau en acier trempé sur lequel repose un ordinateur qui sort de sa veille dès votre entrée dans la pièce. Celui-ci ne vous laisse accéder qu'à une unique note.  Rapport-XX/XX/XX\\  :  Le sujet s'est échappé du secteur 4. Comment est-ce possible avec le renforcement de la sécurité ? Envoyez une équipe sur place et ordonnez au personnel sans combi d'évitez la zone de h-s (violette), il faudra certainement encore drainer l'oxygène pour en venir à bout. Tandis que vous méditez cette lecture vous apercevez derrière le bureau une station de soin personnel, un matériel qui coûte une fortune, en effet dès utilisation l'effet est immédiat, vous vous sentez rajeuni de 10 ans.",
                 "health": 99,
                 "oxygen": -1,
                 "loot": [],
@@ -522,7 +522,7 @@ addEvent = {
         }
     },
     "random_garde": {
-        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement un petit robot d'un blanc immaculé apparaît à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crie-t'il d'une voix stridente.",
+        "text": "Soudain, vous entendez les crissements d'une chenille, immédiatement un petit robot d'un blanc immaculé apparaît à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crie-t'il d'une voix stridente.",
         "actions": {
             "action1": {
                 "description": "Vous détalez sans tarder.",
@@ -585,7 +585,7 @@ addEvent = {
         }
     },
     "random_garde_2": {
-        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs  apparaîssent à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crient-t'il à l'unisson d'une voix stridente.",
+        "text": "Soudain, vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs  apparaîssent à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crient-t'il à l'unisson d'une voix stridente.",
         "actions": {
             "action1": {
                 "description": "Vous détalez sans tarder, vous rappellant de votre dernière confrontation.",
@@ -614,7 +614,7 @@ addEvent = {
         }
     },
     "random_garde_3": {
-        "text": "Soudain vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs en piteux état, apparaîssent à l'angle d'un couloir. \"ALLER.. INTRUS..\". Crient-t'il d'une voix discordante.",
+        "text": "Soudain, vous entendez les crissements d'une chenille, immédiatement trois petits robots blancs en piteux état, apparaîssent à l'angle d'un couloir. \"ALLER.. INTRUS..\". Crient-t'il d'une voix discordante.",
         "actions": {
             "action1": {
                 "description": "Vous détalez sans tarder, vous rappellant de votre dernière confrontation.",
@@ -636,6 +636,51 @@ addEvent = {
                 "loot": [],
                 "add": [],
                 "remove": [],
+                "script": [],
+                "zone": None,
+                "require": []
+            }
+        }
+    },
+    "random_garde_bis": {
+        "text": "Vous entendez le bruit d'un imposant moteur. Un énorme robot humanoïde d'environ 2m se dirige vers vous. Vous vous retournez pour chercher une échappatoire et vous vous apercevez que des portes sont sorties des murs et se ferment dans un claquement sec vous laissant sans possibilité de retraite.",
+        "actions": {
+            "action1": {
+                "description": "Vous foncez sur le robot, cherchant à l'endommager avant qu'il ne fasse de même avec vous.",
+                "next_message": "Vous ne réussissez qu'à vous érafler le poing. Le robot vous soulève sans difficulté et prononce \"GAZ NON-AUTORISE\", tout en dévissant votre bombonne d'oxygène. AU bout de quelques secondes les portes s'ouvrent et il reprend sa route en vous laissant retomber à terre visiblement satisfait.",
+                "health": 0,
+                "oxygen": 0,
+                "loot": [
+                    "bombonne_end"
+                ],
+                "add": [],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_bis"
+                    ]
+                ],
+                "script": [],
+                "zone": None,
+                "require": []
+            },
+            "action2": {
+                "description": "Vous vous applatissez conttre le mur en espérant que vous ne soyez pas sa cible.",
+                "next_message": "A votre abord, le robot vous soulève sans difficulté et prononce \"GAZ NON-AUTORISE\", tout en dévissant votre bombonne d'oxygène. AU bout de quelques secondes les portes s'ouvrent et il reprend sa route en vous laissant retomber à terre visiblement satisfait.",
+                "health": -1,
+                "oxygen": 0,
+                "loot": [
+                    "bombonne_end"
+                ],
+                "add": [],
+                "remove": [
+                    [
+                        "lab",
+                        "random",
+                        "random_garde_bis"
+                    ]
+                ],
                 "script": [],
                 "zone": None,
                 "require": []

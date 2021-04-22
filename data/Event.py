@@ -889,12 +889,12 @@ event = {
                 }
             },
             "lab5": {
-                "text": "Soudain vous entendez les crissements d'une chenille, immédiatement un petit robot d'un blanc immaculé apparaît à l'angle d'un couloir. \"ALERTE INTRUS DETECTE\". Crie-t'il d'une voix stridente.",
+                "text": "Un morceau de mur coulisse devant-vous dévoilant un bâton d'un blanc éclatant, d'environ un mètre, à hauteur des hanches.",
                 "actions": {
                     "action1": {
-                        "description": "Vous détalez sans tarder.",
-                        "next_message": "Vous parvenez à le semer sans difficulté et sa petite voix-stridente disparait rapidement.",
-                        "health": 0,
+                        "description": "Vous posez votre main sur le bâton.",
+                        "next_message": "Vous recevez une intense décharge électrique, qui vous laisse groggy. Vous entendez une voix robotique dire des mots que vous n'arrivez pas à saisir tant vous êtes sonné. Puis le bras se replie, vous laissant continuer.",
+                        "health": -2,
                         "oxygen": 0,
                         "loot": [],
                         "add": [],
@@ -904,13 +904,25 @@ event = {
                         "require": []
                     },
                     "action2": {
-                        "description": "Vous vous jetez sur le petit robot, histoire de le faire taire une bonne fois pour toutes.",
-                        "next_message": "Bien mal vous en a pris, vous commencez à réaliser votre erreur au premier choc électrique, bientôt suivi de nombreux autres. Vous êtes bientôt incapable de bouger. Soudain le robot s'arrête et s'exclame fièrement \"INTRUS NEUTRALISE\", il s'éloigne alors avec le même bruit de chenille qu'il est venu. Au bout de longues minutes vous parvenez à vous lever, ou plutôt à vous trainez et vous reprenez votre route en espérant ne jamais recroiser ce robot.",
-                        "health": -2,
+                        "description": "Vous esquivez précautionneusement le bras.",
+                        "next_message": "Rien ne se passe et vous continuez votre chemin.",
+                        "health": 0,
                         "oxygen": 0,
                         "loot": [],
-                        "add": [],
-                        "remove": [],
+                        "add": [
+                            [
+                                "lab",
+                                "random",
+                                "random_garde_bis"
+                            ]
+                        ],
+                        "remove": [
+                            [
+                                "lab",
+                                "random",
+                                "random5_salle1"
+                            ]
+                        ],
                         "script": [],
                         "zone": None,
                         "require": []
