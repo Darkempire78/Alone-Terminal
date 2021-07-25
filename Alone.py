@@ -8,9 +8,6 @@ import random
 from termcolor import colored
 from pyfiglet import Figlet
 
-from data.Event import event
-from data.AddEvent import addEvent
-from data.Loot import loot
 from ExcelExtractor import excelExtractor
 
 class Alone:
@@ -238,6 +235,11 @@ class Alone:
 
 if __name__ == '__main__':
     excelExtractor()
+
+    from data.Event import event
+    from data.AddEvent import addEvent
+    from data.Loot import loot
+
     main = Alone()
     main.synopsis()
     main.alone()

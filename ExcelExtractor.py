@@ -156,7 +156,7 @@ def excelExtractor():
                 event[zone.value][type.value][name.value]["actions"]["action2"]["require"] = require2.value.split(", ")
 
     # write python file with data
-    with codecs.open("data\Event.py",'w', "utf-8") as file:
+    with codecs.open("data/Event.py",'w', "utf-8") as file:
         data = json.dumps(event, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("event = "+ data)
@@ -201,7 +201,7 @@ def excelExtractor():
         loot[codeName.value]["maxOxygen"] = int(maxOxygen.value)
 
     # write python file with data
-    with codecs.open("data\Loot.py",'w', "utf-8") as file:
+    with codecs.open("data/Loot.py",'w', "utf-8") as file:
         data = json.dumps(loot, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("loot = "+ data)
@@ -275,9 +275,9 @@ def excelExtractor():
             else:
                 addEvent[name.value]["actions"]["action1"]["loot"] = loot1.value.split(", ")
             # Add
-            addEvent[name.value]["actions"]["action1"]["add"] = ast.literal_eval(add1.value)
+            addEvent[name.value]["actions"]["action1"]["add"] = ast.literal_eval(add1.value) if add1.value else []
             # Remove
-            addEvent[name.value]["actions"]["action1"]["remove"] = ast.literal_eval(remove1.value)
+            addEvent[name.value]["actions"]["action1"]["remove"] = ast.literal_eval(remove1.value)  if remove1.value else []
             # Script
             if script1.value == "":
                 addEvent[name.value]["actions"]["action1"]["script"] = []
@@ -311,9 +311,9 @@ def excelExtractor():
             else:
                 addEvent[name.value]["actions"]["action2"]["loot"] = loot2.value.split(", ")
             # Add
-            addEvent[name.value]["actions"]["action2"]["add"] = ast.literal_eval(add2.value)
+            addEvent[name.value]["actions"]["action2"]["add"] = ast.literal_eval(add2.value) if add2.value else []
             # Remove
-            addEvent[name.value]["actions"]["action2"]["remove"] = ast.literal_eval(remove2.value)
+            addEvent[name.value]["actions"]["action2"]["remove"] = ast.literal_eval(remove2.value) if remove2.value else []
             # Script
             if script2.value == "":
                 addEvent[name.value]["actions"]["action2"]["script"] = []
@@ -331,7 +331,7 @@ def excelExtractor():
                 addEvent[name.value]["actions"]["action2"]["require"] = require2.value.split(", ")
 
     # write python file with data
-    with codecs.open("data\AddEvent.py",'w', "utf-8") as file:
+    with codecs.open("data/AddEvent.py",'w', "utf-8") as file:
         data = json.dumps(addEvent, indent = 4, ensure_ascii=False)
         data = data.replace("null", "None")
         file.write("addEvent = "+ data)
