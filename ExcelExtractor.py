@@ -6,7 +6,7 @@ import codecs
 def isNaN(num):
     return num != num
 
-def excelExtractor():
+def excelExtractor(mobileDevice=False):
     # Read excel file into pandas DataFrames
     event_df = pd.read_excel('event_table.xlsx', sheet_name=0)
     add_event_df = pd.read_excel('event_table.xlsx', sheet_name=1)
@@ -59,11 +59,16 @@ def excelExtractor():
                 "require": row[23].split(", ") if pd.notna(row[23]) else []
             }
 
-    # Write the event dictionary to a python file
-    with codecs.open("data/Event.py", 'w', "utf-8") as file:
-        data = json.dumps(event, indent=4, ensure_ascii=False)
-        data = data.replace("null", "None")
-        file.write("event = " + data)
+    if mobileDevice:
+        # Write the addEvent dictionary to a JSON file
+        with codecs.open("data_for_mobile/Event.json", 'w', "utf-8") as file:
+            file.write(json.dumps(event, indent=4, ensure_ascii=False))
+    else:
+        # Write the event dictionary to a python file
+        with codecs.open("data/Event.py", 'w', "utf-8") as file:
+            data = json.dumps(event, indent=4, ensure_ascii=False)
+            data = data.replace("null", "None")
+            file.write("event = " + data)
 
     # Process Loot sheet
     loot = {}
@@ -78,11 +83,16 @@ def excelExtractor():
             "maxOxygen": int(row[5])
         }
 
-    # Write the loot dictionary to a python file
-    with codecs.open("data/Loot.py", 'w', "utf-8") as file:
-        data = json.dumps(loot, indent=4, ensure_ascii=False)
-        data = data.replace("null", "None")
-        file.write("loot = " + data)
+    if mobileDevice:
+        # Write the addEvent dictionary to a JSON file
+        with codecs.open("data_for_mobile/Loot.json", 'w', "utf-8") as file:
+            file.write(json.dumps(loot, indent=4, ensure_ascii=False))
+    else:
+        # Write the loot dictionary to a python file
+        with codecs.open("data/Loot.py", 'w', "utf-8") as file:
+            data = json.dumps(loot, indent=4, ensure_ascii=False)
+            data = data.replace("null", "None")
+            file.write("loot = " + data)
 
     # Process Add Event sheet
     addEvent = {}
@@ -124,11 +134,15 @@ def excelExtractor():
                 "require": row[23].split(", ") if pd.notna(row[23]) else []
             }
 
-    # Write the addEvent dictionary to a python file
-    with codecs.open("data/AddEvent.py", 'w', "utf-8") as file:
-        data = json.dumps(addEvent, indent=4, ensure_ascii=False)
-        data = data.replace("null", "None")
-        file.write("addEvent = " + data)
-
+    if mobileDevice:
+        # Write the addEvent dictionary to a JSON file
+        with codecs.open("data_for_mobile/AddEvent.json", 'w', "utf-8") as file:
+            file.write(json.dumps(addEvent, indent=4, ensure_ascii=False))
+    else:
+        # Write the addEvent dictionary to a PYTHON file
+        with codecs.open("data/AddEvent.py", 'w', "utf-8") as file:
+            data = json.dumps(addEvent, indent=4, ensure_ascii=False)
+            data = data.replace("null", "None")
+            file.write("addEvent = " + data)
 # Run the function
 excelExtractor()
